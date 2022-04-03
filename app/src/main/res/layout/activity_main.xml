@@ -42,7 +42,7 @@
         android:id="@+id/userNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="8dp"
         android:text="@string/username"
         app:layout_constraintBottom_toTopOf="@+id/userNameBox"
@@ -57,7 +57,7 @@
         android:layout_marginBottom="372dp"
         android:background="@drawable/border"
         android:hint="@string/username"
-        android:lines="2"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,7 +67,7 @@
         android:id="@+id/passwordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="4dp"
         android:text="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/passwordBox"
@@ -82,7 +82,8 @@
         android:layout_marginBottom="288dp"
         android:background="@drawable/border"
         android:hint="@string/password"
-        android:lines="2"
+        android:padding="10dp"
+        android:inputType="textPassword|textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -130,6 +131,21 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/showOrHidePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:text="@string/show"
+        android:textStyle="bold"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@+id/passwordBox"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText"
         android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
