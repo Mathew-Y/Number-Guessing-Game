@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignInPage">
 
     <TextView
         android:id="@+id/guessingGameTitle"
@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -111,10 +111,12 @@
         android:text="@string/create_an_account"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:clickable="true"
         app:layout_constraintEnd_toStartOf="@+id/forgotPasswordText"
         app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/forgotPasswordText"
@@ -122,10 +124,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
+        android:clickable="true"
         android:text="@string/forgot_password"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

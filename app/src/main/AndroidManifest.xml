@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationNew">
         <activity
-            android:name=".MainActivity"
+            android:name=".CreateAccountPage"
+            android:exported="false" />
+        <activity
+            android:name=".LevelSelectionPage"
+            android:exported="false" />
+        <activity
+            android:name=".SignInPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
