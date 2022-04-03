@@ -55,7 +55,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="372dp"
-        android:background="@drawable/border"
+        android:background="@drawable/black_border"
         android:hint="@string/username"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="288dp"
-        android:background="@drawable/border"
+        android:background="@drawable/black_border"
         android:hint="@string/password"
         android:padding="10dp"
         android:inputType="textPassword|textMultiLine"
@@ -107,31 +107,31 @@
         android:id="@+id/createAccountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="128dp"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/create_an_account"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:clickable="true"
         app:layout_constraintEnd_toStartOf="@+id/forgotPasswordText"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <TextView
         android:id="@+id/forgotPasswordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="15dp"
         android:clickable="true"
+        android:focusable="true"
         android:text="@string/forgot_password"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        android:focusable="true" />
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
     <TextView
         android:id="@+id/showOrHidePassword"
