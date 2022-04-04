@@ -9,12 +9,19 @@
     <string name="forgot_password"><u>Forgot password</u></string>
     <string name="show">Show</string>
     <string name="sign_up">Sign Up</string>
-    <string name="username_3_10_characters_long">Username (3-10 characters long)</string>
+    <string name="username_3_10_characters_long">Username (3–10 characters long)</string>
     <string name="confirm_password">Confirm password</string>
     <string name="security_question_what_is_your_home_town">Security Question: What is your home town?</string>
     <string name="answer">Answer</string>
     <string name="security_question_what_is_the_name_of_your_favourite_teacher">Security Question: What is the name of your favourite teacher?</string>
     <string name="security_question_what_is_your_favourite_food">Security Question: What is your favourite food?</string>
     <string name="create">Create</string>
-    <string name="password_7_15_characters_long">Password (7-15 characters long)</string>
+    <string name="password_7_15_characters_long">Password (7–15 characters long)</string>
+    <string name="password_recovery">Password Recovery</string>
+    <string name="continueText">Continue</string>
+    <string name="security_questions">Security Questions</string>
+    <string name="reset_your_password">Reset Your Password</string>
+    <string name="new_password">New password</string>
+    <string name="reset">Reset</string>
+    <string name="new_password_7_15_characters_long">New password (7-15 characters long)</string>
 </resources>

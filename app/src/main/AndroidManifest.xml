@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationNew">
         <activity
+            android:name=".PasswordStatusPage"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordPage"
+            android:exported="false" />
+        <activity
+            android:name=".SecurityQuestionPage"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPasswordPage"
             android:exported="false" />
         <activity

@@ -1,5 +1,6 @@
 package com.example.myapplicationnew;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class CreateAccountPage extends AppCompatActivity {
 
@@ -25,6 +27,14 @@ public class CreateAccountPage extends AppCompatActivity {
         EditText secQuestionOneBox = (EditText)findViewById(R.id.securityQuestion1Box);
         EditText secQuestionTwoBox = (EditText)findViewById(R.id.securityQuestion2Box);
         EditText secQuestionThreeBox = (EditText)findViewById(R.id.securityQuestion3Box);
+        ImageButton backButton = (ImageButton)findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -55,7 +65,6 @@ public class CreateAccountPage extends AppCompatActivity {
                 }
                 else{
                     startActivity(new Intent(CreateAccountPage.this, LevelSelectionPage.class));
-
                 }
             }
         });

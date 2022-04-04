@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ForgotPasswordPage extends AppCompatActivity {
+public class SecurityQuestionPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password_page);
+        setContentView(R.layout.activity_security_question_page);
 
         ImageButton backButton = (ImageButton)findViewById(R.id.backButton);
-        Button continueButton = (Button)findViewById(R.id.continueButton);
+        Button confirmButton = (Button)findViewById(R.id.confirmButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,10 +25,10 @@ public class ForgotPasswordPage extends AppCompatActivity {
             }
         });
 
-        continueButton.setOnClickListener(new View.OnClickListener() {
+        confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ForgotPasswordPage.this, SecurityQuestionPage.class));
+                startActivity(new Intent(SecurityQuestionPage.this, ResetPasswordPage.class));
             }
         });
     }
