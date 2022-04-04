@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class ResetPasswordPage extends AppCompatActivity {
 
@@ -15,9 +16,17 @@ public class ResetPasswordPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password_page);
 
+        ImageButton backButton = (ImageButton)findViewById(R.id.backButton);
         EditText resetPasswordBox = (EditText)findViewById(R.id.resetPasswordBox);
         EditText confirmPasswordBox = (EditText)findViewById(R.id.confirmPasswordBox);
         Button resetButton = (Button)findViewById(R.id.resetPasswordButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
