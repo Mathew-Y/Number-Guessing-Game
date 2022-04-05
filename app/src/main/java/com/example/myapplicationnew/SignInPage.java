@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -12,15 +14,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplicationnew.authUtils.PasswordEncryption;
+import com.example.myapplicationnew.authUtils.User;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.logging.Level;
+
 public class SignInPage extends AppCompatActivity {
-    public String username;
-    public String password;
+    public static User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        loadData();
         Button loginButton = (Button) findViewById(R.id.loginButton);
         TextView showOrHidePassword = (TextView)findViewById(R.id.showOrHidePassword);
         TextView createAccount = (TextView)findViewById(R.id.createAccountText);
@@ -32,16 +44,62 @@ public class SignInPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignInPage.this, LevelSelectionPage.class));
-                username = usernameBox.getText().toString();
-                usernameBox.setText("");
-                passwordBox.setText("");
+
+                boolean accountFound = false;
+
+//                for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
+//                    if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(usernameBox.getText().toString())) {
+//                        if(PasswordEncryption.decrypt(CreateAccountPage.userList.get(i).getPasswordHash()).equals(passwordBox.getText().toString())) {
+//                            accountFound = true;
+//                            currentUser = CreateAccountPage.userList.get(i);
+//                            usernameBox.setText("");
+//                            passwordBox.setText("");
+//                            startActivity(new Intent(SignInPage.this, LevelSelectionPage.class));
+//                        }
+//                    }
+//                }
+                User user = CreateAccountPage.findUser(usernameBox.getText().toString());
+
+                if(user == null) {
+                    usernameBox.setBackgroundResource(R.drawable.red_border);
+                    passwordBox.setBackgroundResource(R.drawable.red_border);
+                    usernameBox.setHintTextColor(Color.RED);
+                    passwordBox.setHintTextColor(Color.RED);
+                    usernameBox.setHint("Invalid login credentials");
+                    passwordBox.setHint("Invalid login credentials");
+                    usernameBox.setText("");
+                    passwordBox.setText("");
+                }
+                else if(!PasswordEncryption.decrypt(user.getPasswordHash()).equals(passwordBox.getText().toString())) {
+                    usernameBox.setBackgroundResource(R.drawable.red_border);
+                    passwordBox.setBackgroundResource(R.drawable.red_border);
+                    usernameBox.setHintTextColor(Color.RED);
+                    passwordBox.setHintTextColor(Color.RED);
+                    usernameBox.setHint("Invalid login credentials");
+                    passwordBox.setHint("Invalid login credentials");
+                    usernameBox.setText("");
+                    passwordBox.setText("");
+                }
+                else if(PasswordEncryption.decrypt(user.getPasswordHash()).equals(passwordBox.getText().toString())) {
+                    currentUser = user;
+                    usernameBox.setHintTextColor(Color.GRAY);
+                    passwordBox.setHintTextColor(Color.GRAY);
+                    usernameBox.setHint("Username");
+                    passwordBox.setHint("Password");
+                    usernameBox.setBackgroundResource(R.drawable.black_border);
+                    passwordBox.setBackgroundResource(R.drawable.black_border);
+                    usernameBox.setText("");
+                    passwordBox.setText("");
+                    startActivity(new Intent(SignInPage.this, LevelSelectionPage.class));
+                }
             }
         });
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                usernameBox.setText("");
+                passwordBox.setText("");
                 startActivity(new Intent(SignInPage.this, CreateAccountPage.class));
             }
         });
@@ -49,6 +107,8 @@ public class SignInPage extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                usernameBox.setText("");
+                passwordBox.setText("");
                 startActivity(new Intent(SignInPage.this, ForgotPasswordPage.class));
             }
         });
@@ -67,5 +127,17 @@ public class SignInPage extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void loadData() {
+        SharedPreferences mPrefs = getSharedPreferences("shared_prefs", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = mPrefs.getString("User list", null);
+        Type type = new TypeToken<ArrayList<User>>(){}.getType();
+        CreateAccountPage.userList = gson.fromJson(json, type);
+
+        if(CreateAccountPage.userList == null) {
+            CreateAccountPage.userList = new ArrayList<>();
+        }
     }
 }
