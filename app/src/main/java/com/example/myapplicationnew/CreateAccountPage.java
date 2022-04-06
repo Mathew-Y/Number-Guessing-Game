@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
@@ -101,7 +102,21 @@ public class CreateAccountPage extends AppCompatActivity {
                     createUsernameBox.setHint("Username already exists");
                 }
                 else {
-                    User newUser = new User(createUsernameBox.getText().toString(), PasswordEncryption.encrypt(createPasswordBox.getText().toString()), secQuestionOneBox.getText().toString(), secQuestionTwoBox.getText().toString(), secQuestionThreeBox.getText().toString());
+                    byte[] md5Input = createPasswordBox.getText().toString().getBytes();
+                    BigInteger md5Data = null;
+                    String md5Str;
+
+                    try {
+                        md5Data = new BigInteger(1, PasswordEncryption.encryptMD5(md5Input));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    md5Str = md5Data.toString(16);
+
+
+
+                    User newUser = new User(createUsernameBox.getText().toString(), md5Str, secQuestionOneBox.getText().toString(), secQuestionTwoBox.getText().toString(), secQuestionThreeBox.getText().toString());
 
                     saveData(newUser);
 

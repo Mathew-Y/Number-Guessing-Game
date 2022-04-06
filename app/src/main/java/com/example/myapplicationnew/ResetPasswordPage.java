@@ -17,6 +17,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class ResetPasswordPage extends AppCompatActivity {
@@ -68,7 +70,20 @@ public class ResetPasswordPage extends AppCompatActivity {
 
                     for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
                         if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(newPasswordUser.getUsername())) {
-                            CreateAccountPage.userList.get(i).setPasswordHash(PasswordEncryption.encrypt(resetPasswordBox.getText().toString()));
+                            byte[] md5Input = resetPasswordBox.getText().toString().getBytes();
+
+                            BigInteger md5Data = null;
+                            String md5Str;
+
+                            try {
+                                md5Data = new BigInteger(1, PasswordEncryption.encryptMD5(md5Input));
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            md5Str = md5Data.toString(16);
+
+                            CreateAccountPage.userList.get(i).setPasswordHash(md5Str);
                         }
                     }
 

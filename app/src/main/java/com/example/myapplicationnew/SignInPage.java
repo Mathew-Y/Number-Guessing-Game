@@ -59,7 +59,9 @@ public class SignInPage extends AppCompatActivity {
                     usernameBox.setText("");
                     passwordBox.setText("");
                 }
-                else if(!PasswordEncryption.decrypt(user.getPasswordHash()).equals(passwordBox.getText().toString())) {
+
+
+                else if(!isCorrectPassword(user, passwordBox)) {
                     usernameBox.setBackgroundResource(R.drawable.red_border);
                     passwordBox.setBackgroundResource(R.drawable.red_border);
                     usernameBox.setHintTextColor(Color.RED);
@@ -69,7 +71,7 @@ public class SignInPage extends AppCompatActivity {
                     usernameBox.setText("");
                     passwordBox.setText("");
                 }
-                else if(PasswordEncryption.decrypt(user.getPasswordHash()).equals(passwordBox.getText().toString())) {
+                else if(isCorrectPassword(user, passwordBox)) {
                     currentUser = user;
                     usernameBox.setHintTextColor(Color.GRAY);
                     passwordBox.setHintTextColor(Color.GRAY);
@@ -128,5 +130,22 @@ public class SignInPage extends AppCompatActivity {
         if(CreateAccountPage.userList == null) {
             CreateAccountPage.userList = new ArrayList<>();
         }
+    }
+
+    public boolean isCorrectPassword(User user, EditText passwordBox) {
+        byte[] md5Input = passwordBox.getText().toString().getBytes();
+
+        BigInteger md5Data = null;
+        String md5Str;
+
+        try {
+            md5Data = new BigInteger(1, PasswordEncryption.encryptMD5(md5Input));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        md5Str = md5Data.toString(16);
+
+        return md5Str.equals(user.getPasswordHash());
     }
 }
