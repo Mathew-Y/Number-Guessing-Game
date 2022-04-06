@@ -164,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/security_question_what_is_the_name_of_your_favourite_teacher"
+        android:text="@string/what_is_your_mother_s_maiden_name"
         app:layout_constraintBottom_toTopOf="@+id/securityQuestion2Box"
         app:layout_constraintStart_toStartOf="parent" />
 

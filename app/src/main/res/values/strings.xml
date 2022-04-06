@@ -28,4 +28,5 @@
     <string name="your_password_has_been_reset_successfully">Your password has been reset successfully.</string>
     <string name="account_created">Account Created!</string>
     <string name="your_account_has_been_created_successfully">Your account has been created successfully.</string>
+    <string name="what_is_your_mother_s_maiden_name">Security Question: What is your mother\'s maiden name?</string>
 </resources>
