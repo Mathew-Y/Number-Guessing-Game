@@ -33,6 +33,8 @@ public class SignInPage extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         loadData();
+
+
         Button loginButton = (Button) findViewById(R.id.loginButton);
         TextView showOrHidePassword = (TextView)findViewById(R.id.showOrHidePassword);
         TextView createAccount = (TextView)findViewById(R.id.createAccountText);
@@ -45,19 +47,6 @@ public class SignInPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                boolean accountFound = false;
-
-//                for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
-//                    if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(usernameBox.getText().toString())) {
-//                        if(PasswordEncryption.decrypt(CreateAccountPage.userList.get(i).getPasswordHash()).equals(passwordBox.getText().toString())) {
-//                            accountFound = true;
-//                            currentUser = CreateAccountPage.userList.get(i);
-//                            usernameBox.setText("");
-//                            passwordBox.setText("");
-//                            startActivity(new Intent(SignInPage.this, LevelSelectionPage.class));
-//                        }
-//                    }
-//                }
                 User user = CreateAccountPage.findUser(usernameBox.getText().toString());
 
                 if(user == null) {

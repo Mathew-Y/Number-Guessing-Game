@@ -32,7 +32,6 @@ public class CreateAccountPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account_page);
 
-        loadData();
         Button createAccountButton = (Button)findViewById(R.id.createAccountButton);
         EditText createUsernameBox = (EditText)findViewById(R.id.createUsernameBox);
         EditText createPasswordBox = (EditText)findViewById(R.id.createPasswordBox);
@@ -55,16 +54,34 @@ public class CreateAccountPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 createUsernameBox.setBackgroundResource(R.drawable.black_border);
+                createUsernameBox.setHintTextColor(Color.GRAY);
+                createUsernameBox.setHint("Username");
                 createPasswordBox.setBackgroundResource(R.drawable.black_border);
                 confirmPasswordBox.setBackgroundResource(R.drawable.black_border);
+                createPasswordBox.setHint("Password");
+                confirmPasswordBox.setHint("Confirm password");
+                createPasswordBox.setHintTextColor(Color.GRAY);
+                confirmPasswordBox.setHintTextColor(Color.GRAY);
 
                 if(createUsernameBox.getText().toString().length() < 3 || createUsernameBox.getText().toString().length() > 10) {
                     createUsernameBox.setText("");
                     createUsernameBox.setBackgroundResource(R.drawable.red_border);
+                    createUsernameBox.setHintTextColor(Color.RED);
+                    createUsernameBox.setHint("Username must be 3-10 characters long");
                 }
-                else if(createPasswordBox.getText().toString().length() < 7 || createPasswordBox.getText().toString().length() > 15 || !createPasswordBox.getText().toString().equals(confirmPasswordBox.getText().toString())) {
+                else if(createPasswordBox.getText().toString().length() < 7 || createPasswordBox.getText().toString().length() > 15) {
                     createPasswordBox.setText("");
                     confirmPasswordBox.setText("");
+                    createPasswordBox.setBackgroundResource(R.drawable.red_border);
+                    confirmPasswordBox.setBackgroundResource(R.drawable.red_border);
+                }
+                else if(!createPasswordBox.getText().toString().equals(confirmPasswordBox.getText().toString())) {
+                    createPasswordBox.setText("");
+                    confirmPasswordBox.setText("");
+                    createPasswordBox.setHintTextColor(Color.RED);
+                    confirmPasswordBox.setHintTextColor(Color.RED);
+                    createPasswordBox.setHint("Passwords do not match");
+                    confirmPasswordBox.setHint("Passwords do not match");
                     createPasswordBox.setBackgroundResource(R.drawable.red_border);
                     confirmPasswordBox.setBackgroundResource(R.drawable.red_border);
                 }
@@ -115,7 +132,6 @@ public class CreateAccountPage extends AppCompatActivity {
         if(userList == null) {
             userList = new ArrayList<>();
         }
-
     }
 
     public static User findUser(String username) {

@@ -31,7 +31,6 @@ public class ForgotPasswordPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password_page);
 
-        loadData();
         ImageButton backButton = (ImageButton)findViewById(R.id.backButton);
         Button continueButton = (Button)findViewById(R.id.continueButton);
         EditText usernameBox = (EditText)findViewById(R.id.enterUsernameBox);
@@ -67,35 +66,7 @@ public class ForgotPasswordPage extends AppCompatActivity {
                     usernameBox.setHintTextColor(Color.RED);
                     usernameBox.setHint("Username does not exist");
                 }
-//                boolean userFound = false;
-//
-//                for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
-//                    if(CreateAccountPage.userList.stream().anyMatch(o -> usernameBox.getText().toString().equalsIgnoreCase(o.getUsername()))) {
-//                        foundUser = CreateAccountPage.userList.get(i);
-//                        userFound = true;
-//                        startActivity(new Intent(ForgotPasswordPage.this, SecurityQuestionPage.class));
-//                    }
-//                }
-//                if(!userFound) {
-//                    usernameBox.setBackgroundResource(R.drawable.red_border);
-//                    usernameBox.setText("");
-//                    usernameBox.setHintTextColor(Color.RED);
-//                    usernameBox.setHint("Username does not exist");
-//                }
-
             }
         });
-    }
-
-    public void loadData() {
-        SharedPreferences mPrefs = getSharedPreferences("shared_prefs", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = mPrefs.getString("User list", null);
-        Type type = new TypeToken<ArrayList<User>>(){}.getType();
-        CreateAccountPage.userList = gson.fromJson(json, type);
-
-        if(CreateAccountPage.userList == null) {
-            CreateAccountPage.userList = new ArrayList<>();
-        }
     }
 }

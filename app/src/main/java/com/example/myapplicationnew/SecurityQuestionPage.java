@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 import com.example.myapplicationnew.authUtils.User;
 
 public class SecurityQuestionPage extends AppCompatActivity {
-    public User forgottenUser;
+    public static User forgottenUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
