@@ -63,6 +63,15 @@ public class CreateAccountPage extends AppCompatActivity {
                 confirmPasswordBox.setHint("Confirm password");
                 createPasswordBox.setHintTextColor(Color.GRAY);
                 confirmPasswordBox.setHintTextColor(Color.GRAY);
+                secQuestionOneBox.setBackgroundResource(R.drawable.black_border);
+                secQuestionOneBox.setHintTextColor(Color.GRAY);
+                secQuestionOneBox.setHint("Answer");
+                secQuestionTwoBox.setBackgroundResource(R.drawable.black_border);
+                secQuestionTwoBox.setHintTextColor(Color.GRAY);
+                secQuestionTwoBox.setHint("Answer");
+                secQuestionThreeBox.setBackgroundResource(R.drawable.black_border);
+                secQuestionThreeBox.setHintTextColor(Color.GRAY);
+                secQuestionThreeBox.setHint("Answer");
 
                 if(createUsernameBox.getText().toString().length() < 3 || createUsernameBox.getText().toString().length() > 10) {
                     createUsernameBox.setText("");
@@ -92,12 +101,18 @@ public class CreateAccountPage extends AppCompatActivity {
                 }
                 else if(secQuestionOneBox.getText().toString().isEmpty()) {
                     secQuestionOneBox.setBackgroundResource(R.drawable.red_border);
+                    secQuestionOneBox.setHintTextColor(Color.RED);
+                    secQuestionOneBox.setHint("Required");
                 }
                 else if(secQuestionTwoBox.getText().toString().isEmpty()) {
                     secQuestionTwoBox.setBackgroundResource(R.drawable.red_border);
+                    secQuestionTwoBox.setHintTextColor(Color.RED);
+                    secQuestionTwoBox.setHint("Required");
                 }
                 else if(secQuestionThreeBox.getText().toString().isEmpty()) {
                     secQuestionThreeBox.setBackgroundResource(R.drawable.red_border);
+                    secQuestionThreeBox.setHintTextColor(Color.RED);
+                    secQuestionThreeBox.setHint("Required");
                 }
                 else if(userList.stream().anyMatch(o -> createUsernameBox.getText().toString().equalsIgnoreCase(o.getUsername()))) {
                     createUsernameBox.setBackgroundResource(R.drawable.red_border);
