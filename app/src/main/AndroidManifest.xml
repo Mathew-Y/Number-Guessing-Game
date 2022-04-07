@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationNew">
         <activity
+            android:name=".LeaderboardPage"
+            android:exported="false" />
+        <activity
+            android:name=".HardPage"
+            android:exported="false" />
+        <activity
+            android:name=".MediumPage"
+            android:exported="false" />
+        <activity
+            android:name=".WinPage"
+            android:exported="false" />
+        <activity
+            android:name=".EasyPage"
+            android:exported="false" />
+        <activity
+            android:name=".InstructionsPage"
+            android:exported="false" />
+        <activity
             android:name=".AccountCreatedPage"
             android:exported="false" />
         <activity

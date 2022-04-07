@@ -73,6 +73,10 @@ public class CreateAccountPage extends AppCompatActivity {
                 else if(createPasswordBox.getText().toString().length() < 7 || createPasswordBox.getText().toString().length() > 15) {
                     createPasswordBox.setText("");
                     confirmPasswordBox.setText("");
+                    createPasswordBox.setHintTextColor(Color.RED);
+                    confirmPasswordBox.setHintTextColor(Color.RED);
+                    createPasswordBox.setHint("Password must be 7-15 characters long");
+                    confirmPasswordBox.setHint("Password must be 7-15 characters long");
                     createPasswordBox.setBackgroundResource(R.drawable.red_border);
                     confirmPasswordBox.setBackgroundResource(R.drawable.red_border);
                 }

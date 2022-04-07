@@ -15,6 +15,9 @@ public class User {
     public User(String username, String passwordHash, String securityResponseOne, String securityResponseTwo, String securityResponseThree) {
         this.username = username;
         this.passwordHash = passwordHash;
+        easyScores = new ArrayList<>();
+        mediumScores = new ArrayList<>();
+        hardScores = new ArrayList<>();
         this.securityResponseOne = securityResponseOne;
         this.securityResponseTwo = securityResponseTwo;
         this.securityResponseThree = securityResponseThree;

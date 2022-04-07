@@ -29,4 +29,23 @@
     <string name="account_created">Account Created!</string>
     <string name="your_account_has_been_created_successfully">Your account has been created successfully.</string>
     <string name="what_is_your_mother_s_maiden_name">Security Question: What is your mother\'s maiden name?</string>
+    <string name="log_out"><u>Log out</u></string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="how_to_play">How to play</string>
+    <string name="view_leaderboard">View leaderboard</string>
+    <string name="instructions">Instructions</string>
+    <string name="welcome_to_the_number_guessing_game_in_this_game_you_may_choose_between_the_difficulties_of_easy_medium_or_hard_and_in_each_of_them_a_random_number_will_be_generated_from_a_given_range_in_the_more_challenging_modes_the_range_will_be_bigger_the_point_of_the_game_is_to_attempt_to_figure_out_the_generated_number_in_a_limited_amount_of_guesses_good_luck">Welcome to The Number Guessing Game. In this game, you may choose between the difficulties of easy, medium, or hard, and in each of them, a random number will be generated from a given range. In the more challenging modes, the range will be bigger. The point of the game is to attempt to figure out the generated number in a limited amount of guesses. Good luck!</string>
+    <string name="range_1_10">Range: 1-10</string>
+    <string name="guess">Guess</string>
+    <string name="enter">Enter</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="play_again">Play again</string>
+    <string name="range_1_100">Range: 1-100</string>
+    <string name="range_1_1000">Range: 1-1000</string>
+    <string name="leaderboard_easy">Leaderboard (Easy)</string>
+    <string name="leaderboard_medium">Leaderboard (Medium)</string>
+    <string name="leaderboard_hard">Leaderboard (Hard)</string>
 </resources>
