@@ -26,7 +26,6 @@
         android:text="@string/log_out"
         android:textSize="20sp"
         android:clickable="true"
-        android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

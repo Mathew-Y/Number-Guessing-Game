@@ -48,4 +48,8 @@
     <string name="leaderboard_easy">Leaderboard (Easy)</string>
     <string name="leaderboard_medium">Leaderboard (Medium)</string>
     <string name="leaderboard_hard">Leaderboard (Hard)</string>
+    <string name="reset_scores">Reset scores</string>
+    <string name="account_scores_reset">Account scores reset!</string>
+    <string name="all_scores_on_your_account_have_been_successfully_reset">All scores on your account have been successfully reset.</string>
+    <string name="your_account_s_scores_have_been_successfully_reset">Your account\'s scores have been successfully reset.</string>
 </resources>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationNew">
         <activity
+            android:name=".ScoresResetPage"
+            android:exported="false" />
+        <activity
             android:name=".LeaderboardPage"
             android:exported="false" />
         <activity

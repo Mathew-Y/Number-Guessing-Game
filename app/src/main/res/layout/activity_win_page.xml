@@ -32,7 +32,6 @@
         android:text="@string/log_out"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/difficultyText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

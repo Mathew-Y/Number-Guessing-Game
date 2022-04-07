@@ -38,6 +38,7 @@ public class EasyPage extends AppCompatActivity {
         TextView usernameText = (TextView)findViewById(R.id.usernameText);
         TextView numGuessesLeft = (TextView)findViewById(R.id.numberOfAttemptsText);
         TextView advice = (TextView)findViewById(R.id.adviceText);
+        TextView logoutText = (TextView)findViewById(R.id.logoutText);
         EditText guessBox = (EditText)findViewById(R.id.guessBox);
         Button enterButton = (Button)findViewById(R.id.enterButton);
         Button mainMenuButton = (Button)findViewById(R.id.mainMenuButton);
@@ -45,6 +46,13 @@ public class EasyPage extends AppCompatActivity {
         usernameText.setText(SignInPage.currentUser.getUsername());
 
         numGuessesLeft.setText("# of attempts: " + numOfGuesses);
+
+        logoutText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EasyPage.this, SignInPage.class));
+            }
+        });
 
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
