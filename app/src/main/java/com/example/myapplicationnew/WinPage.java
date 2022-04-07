@@ -81,6 +81,7 @@ public class WinPage extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        startActivity(new Intent(this, LevelSelectionPage.class));
+        finish();
     }
 }
