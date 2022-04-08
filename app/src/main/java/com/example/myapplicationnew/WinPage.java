@@ -41,7 +41,13 @@ public class WinPage extends AppCompatActivity {
         Button playAgainButton = (Button)findViewById(R.id.playAgainButton);
 
         usernameText.setText(SignInPage.currentUser.getUsername());
-        numOfGuesses.setText("You won in " + LevelSelectionPage.score + " guesses.");
+
+        if(LevelSelectionPage.score != 1) {
+            numOfGuesses.setText("You won in " + LevelSelectionPage.score + " guesses.");
+        }
+        else {
+            numOfGuesses.setText("You won in " + LevelSelectionPage.score + " guess.");
+        }
 
         difficultyText.setText("Difficulty: " + LevelSelectionPage.difficulty);
 
