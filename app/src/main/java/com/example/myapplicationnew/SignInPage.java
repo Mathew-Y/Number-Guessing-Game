@@ -150,4 +150,8 @@ public class SignInPage extends AppCompatActivity {
 
         return md5Str.equals(user.getPasswordHash());
     }
+
+    public void onBackPressed() {
+
+    }
 }

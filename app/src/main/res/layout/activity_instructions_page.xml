@@ -48,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="260dp"
-        android:background="@drawable/black_border"
         android:padding="8dp"
         android:text="@string/welcome_to_the_number_guessing_game_in_this_game_you_may_choose_between_the_difficulties_of_easy_medium_or_hard_and_in_each_of_them_a_random_number_will_be_generated_from_a_given_range_in_the_more_challenging_modes_the_range_will_be_bigger_the_point_of_the_game_is_to_attempt_to_figure_out_the_generated_number_in_a_limited_amount_of_guesses_good_luck"
         android:textAlignment="viewStart"

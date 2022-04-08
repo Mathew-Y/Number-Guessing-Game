@@ -60,7 +60,7 @@
         android:layout_marginBottom="20dp"
         android:text="@string/hard"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/viewLeaderboardButton"
+        app:layout_constraintBottom_toTopOf="@id/howToPlayButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -73,7 +73,7 @@
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/howToPlayButton"
+        app:layout_constraintBottom_toTopOf="@+id/easyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/how_to_play"
-        app:layout_constraintBottom_toTopOf="@+id/easyButton"
+        app:layout_constraintBottom_toTopOf="@+id/viewLeaderboardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
