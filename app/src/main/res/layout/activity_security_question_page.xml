@@ -1,139 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecurityQuestionPage"
-    android:paddingHorizontal="12dp">
-
-    <RelativeLayout
-        android:id="@+id/navigation_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        tools:context=".SecurityQuestionPage"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="24dp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingBottom="24dp"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/navigation_header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="?attr/homeAsUpIndicator" />
+            android:layout_marginTop="4dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="24dp">
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="?attr/homeAsUpIndicator" />
 
-    <TextView
-        android:id="@+id/securityQuestionsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:padding="10dp"
-        android:text="@string/security_questions"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/navigation_header"
-        tools:layout_editor_absoluteX="0dp" />
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/securityQuestion1Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/security_question_what_is_your_home_town"
-        app:layout_constraintBottom_toTopOf="@+id/securityQuestion1Box"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/securityQuestionsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:padding="10dp"
+            android:text="@string/security_questions"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/securityQuestion1Box"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/black_border"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:hint="@string/answer"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@id/securityQuestion2Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/securityQuestion1Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="48dp"
+            android:text="@string/security_question_what_is_your_home_town" />
 
-    <TextView
-        android:id="@+id/securityQuestion2Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/what_is_your_mother_s_maiden_name"
-        app:layout_constraintBottom_toTopOf="@+id/securityQuestion2Box"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/securityQuestion1Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/black_border"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:hint="@string/answer"
+            android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/securityQuestion2Box"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/black_border"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:hint="@string/answer"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@id/securityQuestion3Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/securityQuestion2Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/what_is_your_mother_s_maiden_name" />
 
-    <TextView
-        android:id="@+id/securityQuestion3Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/security_question_what_is_your_favourite_food"
-        app:layout_constraintBottom_toTopOf="@+id/securityQuestion3Box"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/securityQuestion2Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/black_border"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:hint="@string/answer"
+            android:padding="10dp" />
 
-    <EditText
-        android:id="@+id/securityQuestion3Box"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="44dp"
-        android:background="@drawable/black_border"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:hint="@string/answer"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@id/continueButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/securityQuestion3Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/security_question_what_is_your_favourite_food" />
 
-    <Button
-        android:id="@+id/continueButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="128dp"
-        android:text="@string/continueText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/securityQuestion3Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/black_border"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:hint="@string/answer"
+            android:padding="10dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/continueText"/>
+    </LinearLayout>
+</ScrollView>

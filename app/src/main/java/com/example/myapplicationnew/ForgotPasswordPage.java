@@ -54,25 +54,28 @@ public class ForgotPasswordPage extends AppCompatActivity {
                     usernameBox.setHintTextColor(Color.RED);
                     usernameBox.setHint("Required");
                 }
+                else {
+                    for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
+                        if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(usernameBox.getText().toString())) {
+                            foundUser = CreateAccountPage.userList.get(i);
+                            userFound = true;
+                            usernameBox.setText("");
+                            usernameBox.setHintTextColor(Color.GRAY);
+                            usernameBox.setBackgroundResource(R.drawable.black_border);
+                            usernameBox.setHint("Username");
+                            startActivity(new Intent(ForgotPasswordPage.this, SecurityQuestionPage.class));
+                        }
+                    }
 
-                for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
-                    if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(usernameBox.getText().toString())) {
-                        foundUser = CreateAccountPage.userList.get(i);
-                        userFound = true;
+                    if(!userFound) {
+                        usernameBox.setBackgroundResource(R.drawable.red_border);
                         usernameBox.setText("");
-                        usernameBox.setHintTextColor(Color.GRAY);
-                        usernameBox.setBackgroundResource(R.drawable.black_border);
-                        usernameBox.setHint("Username");
-                        startActivity(new Intent(ForgotPasswordPage.this, SecurityQuestionPage.class));
+                        usernameBox.setHintTextColor(Color.RED);
+                        usernameBox.setHint("Username does not exist");
                     }
                 }
 
-                if(!userFound) {
-                    usernameBox.setBackgroundResource(R.drawable.red_border);
-                    usernameBox.setText("");
-                    usernameBox.setHintTextColor(Color.RED);
-                    usernameBox.setHint("Username does not exist");
-                }
+
             }
         });
     }
