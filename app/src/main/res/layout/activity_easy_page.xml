@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EasyPage"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" >
-
-<LinearLayout
-
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingHorizontal="16dp"
-    android:paddingVertical="16dp"
-    tools:context=".EasyPage"
-    android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="12dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/usernameText"
@@ -46,72 +40,85 @@
     </LinearLayout>
 
 
-
-    <TextView
-        android:id="@+id/numberOfAttemptsText"
+    <ScrollView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:layout_marginTop="60dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="10dp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/rangeText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/range_1_10"
-        android:layout_marginTop="96dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="16dp"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/guessBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/black_border"
-        android:hint="@string/guess"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:maxLines="1"
-        android:maxLength="5"
-        android:layout_marginTop="24dp"
-        android:padding="10dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:singleLine="true"
-        android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/enterButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_gravity="center"
-        android:text="@string/enter" />
+            <TextView
+                android:id="@+id/numberOfAttemptsText"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="60dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:padding="10dp" />
 
-    <TextView
-        android:id="@+id/adviceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:textSize="16sp" />
+            <TextView
+                android:id="@+id/rangeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/range_1_10"
+                android:layout_marginTop="96dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/mainMenuButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/main_menu"/>
+            <EditText
+                android:id="@+id/guessBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/black_border"
+                android:hint="@string/guess"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:layout_marginTop="24dp"
+                android:padding="10dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:singleLine="true"
+                android:textAlignment="center" />
 
+            <Button
+                android:id="@+id/enterButton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_gravity="center"
+                android:text="@string/enter" />
+
+            <TextView
+                android:id="@+id/adviceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/mainMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/main_menu"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
-</ScrollView>

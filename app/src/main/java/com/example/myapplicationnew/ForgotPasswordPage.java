@@ -48,6 +48,13 @@ public class ForgotPasswordPage extends AppCompatActivity {
             public void onClick(View view) {
                 boolean userFound = false;
 
+                if(usernameBox.getText().toString().equals("")) {
+                    usernameBox.setBackgroundResource(R.drawable.red_border);
+                    usernameBox.setText("");
+                    usernameBox.setHintTextColor(Color.RED);
+                    usernameBox.setHint("Required");
+                }
+
                 for(int i = 0; i < CreateAccountPage.userList.size(); i++) {
                     if(CreateAccountPage.userList.get(i).getUsername().equalsIgnoreCase(usernameBox.getText().toString())) {
                         foundUser = CreateAccountPage.userList.get(i);
