@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
     android:paddingVertical="16dp"
-    tools:context=".LevelSelectionPage">
+    tools:context="com.example.numberguessinggame.LevelSelectionPage">
 
     <TextView
         android:id="@+id/usernameText"

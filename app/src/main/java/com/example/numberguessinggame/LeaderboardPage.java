@@ -1,4 +1,4 @@
-package com.example.myapplicationnew;
+package com.example.numberguessinggame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.numberguessinggame.R;
 
 import java.util.ArrayList;
 

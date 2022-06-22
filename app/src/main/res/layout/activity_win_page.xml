@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
-    tools:context=".WinPage">
+    tools:context="com.example.numberguessinggame.WinPage">
 
     <TextView
         android:id="@+id/usernameText"

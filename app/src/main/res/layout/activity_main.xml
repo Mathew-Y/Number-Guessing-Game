@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".SignInPage"
+        tools:context="com.example.numberguessinggame.SignInPage"
         android:paddingHorizontal="12dp"
         android:paddingTop="46dp"
         android:paddingBottom="64dp"

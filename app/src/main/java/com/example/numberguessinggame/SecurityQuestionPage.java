@@ -1,4 +1,4 @@
-package com.example.myapplicationnew;
+package com.example.numberguessinggame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.myapplicationnew.authUtils.User;
+import com.example.numberguessinggame.R;
+import com.example.numberguessinggame.authUtils.User;
 
 public class SecurityQuestionPage extends AppCompatActivity {
     public static User forgottenUser;
@@ -38,23 +39,26 @@ public class SecurityQuestionPage extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String questionOneAttempt = CreateAccountPage.encryptTextBox(questionOne.getText().toString().getBytes());
+                String questionTwoAttempt = CreateAccountPage.encryptTextBox(questionTwo.getText().toString().getBytes());
+                String questionThreeAttempt = CreateAccountPage.encryptTextBox(questionThree.getText().toString().getBytes());
                 questionOne.setBackgroundResource(R.drawable.black_border);
                 questionTwo.setBackgroundResource(R.drawable.black_border);
                 questionThree.setBackgroundResource(R.drawable.black_border);
 
-                if(!questionOne.getText().toString().equalsIgnoreCase(forgottenUser.getSecurityResponseOne())) {
+                if(!questionOneAttempt.equals(forgottenUser.getSecurityResponseOne())) {
                     questionOne.setBackgroundResource(R.drawable.red_border);
                     questionOne.setHintTextColor(Color.RED);
                     questionOne.setHint("Incorrect response");
                     questionOne.setText("");
                 }
-                else if(!questionTwo.getText().toString().equalsIgnoreCase(forgottenUser.getSecurityResponseTwo())) {
+                else if(!questionTwoAttempt.equals(forgottenUser.getSecurityResponseTwo())) {
                     questionTwo.setBackgroundResource(R.drawable.red_border);
                     questionTwo.setHintTextColor(Color.RED);
                     questionTwo.setHint("Incorrect response");
                     questionTwo.setText("");
                 }
-                else if(!questionThree.getText().toString().equalsIgnoreCase(forgottenUser.getSecurityResponseThree())) {
+                else if(!questionThreeAttempt.equals(forgottenUser.getSecurityResponseThree())) {
                     questionThree.setBackgroundResource(R.drawable.red_border);
                     questionThree.setHintTextColor(Color.RED);
                     questionThree.setHint("Incorrect response");

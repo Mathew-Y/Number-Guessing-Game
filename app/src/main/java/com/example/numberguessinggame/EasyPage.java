@@ -1,4 +1,4 @@
-package com.example.myapplicationnew;
+package com.example.numberguessinggame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,10 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.myapplicationnew.authUtils.User;
+import com.example.numberguessinggame.R;
+import com.example.numberguessinggame.authUtils.User;
 import com.google.gson.Gson;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;

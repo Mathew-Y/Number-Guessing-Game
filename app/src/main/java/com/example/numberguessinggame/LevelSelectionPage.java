@@ -1,4 +1,4 @@
-package com.example.myapplicationnew;
+package com.example.numberguessinggame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,11 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.myapplicationnew.authUtils.User;
+import com.example.numberguessinggame.R;
+import com.example.numberguessinggame.authUtils.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.w3c.dom.Text;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

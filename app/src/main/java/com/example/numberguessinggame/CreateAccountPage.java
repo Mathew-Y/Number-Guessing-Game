@@ -1,10 +1,9 @@
-package com.example.myapplicationnew;
+package com.example.numberguessinggame;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -15,15 +14,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.myapplicationnew.authUtils.PasswordEncryption;
-import com.example.myapplicationnew.authUtils.User;
+import com.example.numberguessinggame.R;
+import com.example.numberguessinggame.authUtils.PasswordEncryption;
+import com.example.numberguessinggame.authUtils.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.logging.Level;
 
 public class CreateAccountPage extends AppCompatActivity {
     public static ArrayList<User> userList;
@@ -121,21 +120,13 @@ public class CreateAccountPage extends AppCompatActivity {
                     createUsernameBox.setHint("Username already exists");
                 }
                 else {
-                    byte[] md5Input = createPasswordBox.getText().toString().getBytes();
-                    BigInteger md5Data = null;
-                    String md5Str;
 
-                    try {
-                        md5Data = new BigInteger(1, PasswordEncryption.encryptMD5(md5Input));
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    String md5Pass = encryptTextBox(createPasswordBox.getText().toString().getBytes());
+                    String md5Sec1 = encryptTextBox(secQuestionOneBox.getText().toString().getBytes());
+                    String md5Sec2 = encryptTextBox(secQuestionTwoBox.getText().toString().getBytes());
+                    String md5Sec3 = encryptTextBox(secQuestionThreeBox.getText().toString().getBytes());
 
-                    md5Str = md5Data.toString(16);
-
-
-
-                    User newUser = new User(createUsernameBox.getText().toString(), md5Str, secQuestionOneBox.getText().toString(), secQuestionTwoBox.getText().toString(), secQuestionThreeBox.getText().toString());
+                    User newUser = new User(createUsernameBox.getText().toString(), md5Pass, md5Sec1, md5Sec2, md5Sec3);
 
                     saveData(newUser);
 
@@ -175,5 +166,20 @@ public class CreateAccountPage extends AppCompatActivity {
             }
         }
         return null;
+    }
+
+    public static String encryptTextBox(byte[] bytes) {
+        BigInteger md5Data = null;
+        String encryptedText;
+
+        try {
+            md5Data = new BigInteger(1, PasswordEncryption.encryptMD5(bytes));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        encryptedText = md5Data.toString(16);
+
+        return encryptedText;
     }
 }

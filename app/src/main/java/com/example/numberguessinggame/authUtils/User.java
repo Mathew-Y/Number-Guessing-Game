@@ -1,4 +1,4 @@
-package com.example.myapplicationnew.authUtils;
+package com.example.numberguessinggame.authUtils;
 
 import java.util.ArrayList;
 

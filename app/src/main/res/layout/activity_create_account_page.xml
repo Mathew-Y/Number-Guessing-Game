@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAccountPage"
+    tools:context="com.example.numberguessinggame.CreateAccountPage"
     android:paddingHorizontal="12dp">
 
 <androidx.constraintlayout.widget.ConstraintLayout

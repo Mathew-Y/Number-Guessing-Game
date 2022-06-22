@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplicationnew">
+    package="com.example.numberguessinggame">
 
     <application
         android:allowBackup="true"
@@ -10,49 +10,49 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationNew">
         <activity
-            android:name=".ScoresResetPage"
+            android:name="com.example.numberguessinggame.ScoresResetPage"
             android:exported="false" />
         <activity
-            android:name=".LeaderboardPage"
+            android:name="com.example.numberguessinggame.LeaderboardPage"
             android:exported="false" />
         <activity
-            android:name=".HardPage"
+            android:name="com.example.numberguessinggame.HardPage"
             android:exported="false" />
         <activity
-            android:name=".MediumPage"
+            android:name="com.example.numberguessinggame.MediumPage"
             android:exported="false" />
         <activity
-            android:name=".WinPage"
+            android:name="com.example.numberguessinggame.WinPage"
             android:exported="false" />
         <activity
-            android:name=".EasyPage"
+            android:name="com.example.numberguessinggame.EasyPage"
             android:exported="false" />
         <activity
-            android:name=".InstructionsPage"
+            android:name="com.example.numberguessinggame.InstructionsPage"
             android:exported="false" />
         <activity
-            android:name=".AccountCreatedPage"
+            android:name="com.example.numberguessinggame.AccountCreatedPage"
             android:exported="false" />
         <activity
-            android:name=".PasswordStatusPage"
+            android:name="com.example.numberguessinggame.PasswordStatusPage"
             android:exported="false" />
         <activity
-            android:name=".ResetPasswordPage"
+            android:name="com.example.numberguessinggame.ResetPasswordPage"
             android:exported="false" />
         <activity
-            android:name=".SecurityQuestionPage"
+            android:name="com.example.numberguessinggame.SecurityQuestionPage"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordPage"
+            android:name="com.example.numberguessinggame.ForgotPasswordPage"
             android:exported="false" />
         <activity
-            android:name=".CreateAccountPage"
+            android:name="com.example.numberguessinggame.CreateAccountPage"
             android:exported="false" />
         <activity
-            android:name=".LevelSelectionPage"
+            android:name="com.example.numberguessinggame.LevelSelectionPage"
             android:exported="false" />
         <activity
-            android:name=".SignInPage"
+            android:name="com.example.numberguessinggame.SignInPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
